@@ -1,0 +1,97 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SK Gym - Agol</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+        }
+
+        header {
+            background: url('https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg') no-repeat center/cover;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+        }
+
+        .owner {
+            padding: 20px;
+            background-color: #111;
+        }
+
+        .owner h2 {
+            color: gold;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: gold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1><strong style="color: red;">S.K</strong>.FITNESS <strong style="color: red;">GYM</strong></h1>
+        <p>Your Fitness</p>
+    </header>
+
+    <section class="owner">
+        <h2>Meet the Owner</h2>
+        <p>Sadik Khan - Passionate about helping Agol stay fit and healthy.</p>
+    </section>
+
+    <section class="contact">
+        <h2 style="color:gold;">Connect With Us</h2>
+        <p>📍 Agol</p>
+        <p>📞 +91 99999 99999</p>
+        <p>📸 <a href="https://instagram.com/sadik_fitking" target="_blank">Instagram: SK Fitness King</a></p>
+    </section>
+
+    <footer>
+        &copy; 2025 SK Gym. All rights reserved.
+    </footer>
+</body>
+
+</html>

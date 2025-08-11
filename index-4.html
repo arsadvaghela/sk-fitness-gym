@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SK Gym - Agol</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #0f0f0f, #1c1c1c);
+            color: #fff;
+            text-align: center;
+            line-height: 1.6;
+        }
+
+        header {
+            background: url('https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg') no-repeat center/cover;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        header h1,
+        header p {
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s ease;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: gold;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        section {
+            padding: 40px 20px;
+        }
+
+        .box {
+            background-color: #111;
+            border: 2px solid gold;
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 900px;
+            margin: auto;
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+        }
+
+        .box h2 {
+            color: gold;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .slider {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .dots {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .dots span {
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: gold;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+
+        .dots span.active {
+            opacity: 1;
+        }
+
+        footer {
+            background-color: #111;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+
+        a {
+            color: gold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 id="title">SK Gym</h1>
+        <p id="tagline">Transform Your Body, Elevate Your Mind</p>
+    </header>
+
+    <section>
+        <div class="box">
+            <h2>Meet the Owner</h2>
+            <p>Sadik Khan, a passionate fitness professional from Agol, brings over 10 years of hands-on training
+                experience. His mission is to guide every member personally, blending modern techniques with classic
+                discipline. Whether you’re a beginner or an athlete, his approach ensures progress, confidence, and
+                strength.</p>
+        </div>
+    </section>
+
+    <section>
+        <div class="box">
+            <h2>About SK Gym</h2>
+            <p>SK Gym isn’t just a workout space – it’s a supportive fitness family. Equipped with modern machines, free
+                weights, cardio stations, and functional training zones, we cater to all fitness levels. Our programs
+                include personal training, group workouts, yoga, and nutrition guidance.</p>
+            <p>We focus on transforming not only bodies but also mindsets. Every rep, every session, and every drop of
+                sweat takes you closer to a healthier, stronger you.</p>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2 style="color:gold;">Gallery</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="https://images.pexels.com/photos/799164/pexels-photo-799164.jpeg" alt="Gym interior">
+                <img src="https://images.pexels.com/photos/1552106/pexels-photo-1552106.jpeg" alt="Strength training">
+                <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg" alt="Personal training">
+                <img src="https://images.pexels.com/photos/4753879/pexels-photo-4753879.jpeg" alt="Cardio workout">
+            </div>
+        </div>
+        <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+        </div>
+    </section>
+
+    <section class="contact">
+        <div class="box">
+            <h2>Connect With Us</h2>
+            <p>📍 Near Main Market, Agol</p>
+            <p>📞 +91 99999 99999</p>
+            <p>📧 info@skgym.com</p>
+            <p>📸 <a href="https://instagram.com/sk_fitness_king" target="_blank">Instagram: SK Fitness King</a></p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 SK Gym. All rights reserved.
+    </footer>
+
+    <script>
+        window.addEventListener('load', () => {
+            document.getElementById('title').style.opacity = '1';
+            document.getElementById('title').style.transform = 'translateY(0)';
+            setTimeout(() => {
+                document.getElementById('tagline').style.opacity = '1';
+                document.getElementById('tagline').style.transform = 'translateY(0)';
+            }, 500);
+        });
+
+        let index = 0;
+        const slides = document.querySelector('.slides');
+        const dots = document.querySelectorAll('.dot');
+        function showSlide(i) {
+            index = i;
+            slides.style.transform = `translateX(${-index * 100}%)`;
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+        }
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => showSlide(i));
+        });
+        setInterval(() => {
+            index = (index + 1) % dots.length;
+            showSlide(index);
+        }, 3000);
+    </script>
+</body>
+
+</html>
