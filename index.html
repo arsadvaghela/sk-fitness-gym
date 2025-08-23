@@ -2,29 +2,240 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>S.K.FITNESS GYM AGOL</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --bg: #0b0b0b;
+            --card: #111;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Inter, system-ui, Arial, sans-serif;
+            background: linear-gradient(180deg, #070707 0%, #111 100%);
+            color: #fff
+        }
+
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 20px
+        }
+
+        header {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px
+        }
+
+        header .hero {
+            position: absolute;
+            inset: 0;
+            background-image: url('https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg');
+            background-size: cover;
+            background-position: center;
+            filter: brightness(0.45) saturate(1.1);
+            transform: scale(1.02);
+        }
+
+        header::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.6))
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 40px
+        }
+
+        h1 {
+            font-size: 2.6rem;
+            margin: 0;
+            color: var(--gold);
+            letter-spacing: 1px
+        }
+
+        p.lead {
+            font-size: 1.05rem;
+            margin-top: 12px;
+            color: #e7e7e7;
+            max-width: 820px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .box {
+            background: var(--card);
+            border: 1px solid rgba(212, 175, 55, 0.12);
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+            margin-bottom: 28px
+        }
+
+        .box h2 {
+            color: var(--gold);
+            margin: 0 0 12px 0;
+            font-size: 1.4rem
+        }
+
+        .box p {
+            color: #ddd;
+            margin: 0 0 8px 0
+        }
+
+        /* Slider */
+        .slider {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px
+        }
+
+        .slides {
+            display: flex;
+            transition: transform .6s cubic-bezier(.22, .9, .35, 1)
+        }
+
+        .slides img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 0
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.35);
+            cursor: pointer;
+            opacity: .6
+        }
+
+        .dot.active {
+            background: var(--gold);
+            opacity: 1
+        }
+
+        /* Responsive */
+        @media (max-width:720px) {
+            h1 {
+                font-size: 2rem
+            }
+
+            .slides img {
+                height: 260px
+            }
+
+            .box {
+                padding: 18px
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="hs-item set-bg" data-setbg="img/hero/hero-2.jpg"
-        style="background-image: url(&quot;img/hero/hero-2.jpg&quot;);">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 offset-lg-6">
-                    <div class="hi-text">
-                        <span>Shape your body</span>
-                        <h1>SK <strong>FITNESS</strong>GYM AGOL </h1>
-                        <a href="#" class="primary-btn">Get info</a>
+    <div class="container">
+        <header>
+            <div class="hero" aria-hidden="true"></div>
+            <div class="hero-content">
+                <h1>SK Gym</h1>
+                <p class="lead">Transform your body — and elevate your mind. Personal training by Sadik Khan, built for
+                    Agol locals who want real results.</p>
+            </div>
+        </header>
+
+        <main style="margin-top:22px">
+            <section class="box">
+                <h2>Meet the Owner</h2>
+                <p><strong>Sadik Khan</strong> — fitness coach with 10+ years’ hands-on experience. He focuses on
+                    simple, proven plans: strength, mobility, nutrition basics, and consistent coaching. Sadik trains
+                    members of all levels with a personal approach that emphasises technique and habit-building.</p>
+            </section>
+
+            <section class="box">
+                <h2>About SK Gym</h2>
+                <p>SK Gym is a neighborhood gym in Agol offering modern equipment, a functional area, free weights, and
+                    a cardio zone. We run small-group sessions, one-on-one coaching, and basic nutrition guidance. The
+                    vibe is disciplined but welcoming — built so members stay for years.</p>
+            </section>
+
+            <section style="margin-bottom:22px">
+                <h2 style="color:var(--gold);text-align:left;margin:0 0 10px 0">Gallery</h2>
+                <div class="slider box">
+                    <div class="slides" id="slides">
+                        <img src="https://images.pexels.com/photos/799164/pexels-photo-799164.jpeg" alt="Gym interior">
+                        <img src="https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg"
+                            alt="Trainer coaching client">
+                        <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg"
+                            alt="Personal training">
+                        <img src="https://images.pexels.com/photos/4753879/pexels-photo-4753879.jpeg" alt="Cardio area">
                     </div>
                 </div>
-            </div>
-        </div>
+                <div class="dots" id="dots">
+                    <div class="dot active"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </section>
+
+            <section class="box">
+                <h2>Connect</h2>
+                <p>📍 Near Main Market, Agol</p>
+                <p>📞 +91 99999 99999</p>
+                <p>📧 info@skgym.com</p>
+                <p>📸 <a href="https://instagram.com/sk_fitness_king" target="_blank" rel="noopener"
+                        style="color:var(--gold)">Instagram: SK Fitness King</a></p>
+            </section>
+
+            <footer style="text-align:center;padding:18px 0;color:#bbb">&copy; 2025 SK Gym — Made with care for Agol.
+            </footer>
+        </main>
     </div>
 
-
-    <h1>Agol Gym</h1>
+    <script>
+        // simple slider logic
+        (function () {
+            const slidesEl = document.getElementById('slides');
+            const dots = Array.from(document.querySelectorAll('#dots .dot'));
+            let idx = 0, total = slidesEl.children.length;
+            function show(i) {
+                idx = i < 0 ? total - 1 : i % total;
+                slidesEl.style.transform = `translateX(${-idx * 100}%)`;
+                dots.forEach(d => d.classList.remove('active'));
+                dots[idx].classList.add('active');
+            }
+            dots.forEach((d, i) => d.addEventListener('click', () => show(i)));
+            let timer = setInterval(() => show(idx + 1), 3500);
+            // pause on hover
+            slidesEl.addEventListener('mouseenter', () => clearInterval(timer));
+            slidesEl.addEventListener('mouseleave', () => timer = setInterval(() => show(idx + 1), 3500));
+            // initial
+            show(0);
+        })();
+    </script>
 </body>
 
 </html>
