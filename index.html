@@ -213,23 +213,48 @@
 
 
             <section style="margin-bottom:22px ">
-                <h2 style="color:var(--gold);text-align:left;margin:0 0 10px 0">Gallery</h2>
-                <div class="slider box" style="border:1px solid yellow;">
-                    <div class="slides" id="slides">
-                        <img src="1.jpeg" alt="Gym interior">
-                        <img src="2.jpeg" alt="Trainer coaching client">
-                        <img src="3.png" alt="Personal training">
-                        <img src="4.jpeg" alt="">
-                        <img src="5.jpeg" alt="">
-                        <img src="6.jpeg" alt="">
+
+                <!-- Owl Carousel CSS -->
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+                <link rel="stylesheet"
+                    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+
+                <section style="text-align:center; padding:20px;">
+                    <h2 style="color:yellow; font-size:28px;">🏋️ Gym Gallery 🏋️</h2>
+
+                    <div class="owl-carousel owl-theme" style="margin-top:20px;">
+                        <div class="item"><img src="1.jpeg" alt="Gym 1" style="border-radius:15px;"></div>
+                        <div class="item"><img src="2.jpeg" alt="Gym 2" style="border-radius:15px;"></div>
+                        <div class="item"><img src="3.png" alt="Gym 3" style="border-radius:15px;"></div>
+                        <div class="item"><img src="4.jpeg" alt="Gym 4" style="border-radius:15px;"></div>
+                        <div class="item"><img src="5.jpeg" alt="Gym 5" style="border-radius:15px;"></div>
+                        <div class="item"><img src="6.jpeg" alt="Gym 6" style="border-radius:15px;"></div>
                     </div>
-                </div>
-                <div class="dots" id="dots">
-                    <div class="dot active"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                </div>
+                </section>
+
+                <!-- jQuery + Owl Carousel JS -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+                <script>
+                    $(document).ready(function () {
+                        $(".owl-carousel").owlCarousel({
+                            loop: true,
+                            margin: 10,
+                            nav: true,
+                            autoplay: true,
+                            autoplayTimeout: 2000,
+                            responsive: {
+                                0: { items: 1 },
+                                600: { items: 2 },
+                                1000: { items: 3 }
+                            }
+                        });
+                    });
+                </script>
+
+
             </section>
 
             <section class="box" style="border:1px solid yellow;">
